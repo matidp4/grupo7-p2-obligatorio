@@ -27,6 +27,10 @@ public class Operations {
 
     public static void cantidadHashTagsDistintos(){
         System.out.println("Cantidad de HashTags distintos");
+        // implementacion aca abajo
+        int cantidad = 0;
+        System.out.println("prueba commit");
+        //for (HashTag hashTag : hashTags.values()) {
     }
 
     public static void hashTagMasUsado(){
