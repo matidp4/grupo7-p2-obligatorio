@@ -1,5 +1,8 @@
 package uy.edu.um.prog2.adt.linkedlist;
 
+import entities.HashTag;
+import entities.Tweet;
+
 public interface MyLinkedList<E> {
     void add(E element);
     void add(int index, E element);
@@ -11,4 +14,5 @@ public interface MyLinkedList<E> {
     boolean isEmpty();
     int size();
     void clear();
+
 }

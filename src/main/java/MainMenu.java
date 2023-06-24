@@ -1,15 +1,17 @@
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public interface MainMenu {
 
 
-    public static void Menu() {
+    public static void Menu() throws IOException {
         try{
 
         Scanner optionSelect = new Scanner(System.in);
         System.out.println("-----------------------");
         System.out.println("Menú principal");
+        System.out.println("0. Cargar datos del CSV");
         System.out.println("1. Los 10 pilotos activos más mencionados en los tweets en un mes");
         System.out.println("2. Los 15 usuarios más activos en un mes");
         System.out.println("3. Cantidad de HashTags distiontos para un día dado");
@@ -22,6 +24,11 @@ public interface MainMenu {
         Integer opcion = optionSelect.nextInt();
 
         switch (opcion){
+            case 0:
+                System.out.println("Cargar datos del CSV");
+                CSVReader.CargaDeDatos();
+                Menu();
+                break;
             case 1:
                 System.out.println("Los 10 pilotos activos más mencionados en los tweets en un mes son:");
                 Menu();
@@ -67,7 +74,7 @@ public interface MainMenu {
             }
         }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Menu();
     }
 }
