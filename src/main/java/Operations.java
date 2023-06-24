@@ -1,5 +1,7 @@
 import entities.User;
 import uy.edu.um.prog2.adt.linkedlist.Node;
+import uy.edu.um.prog2.adt.linkedlist.MyLinkedListImpl;
+import uy.edu.um.prog2.adt.linkedlist.MyLinkedList;
 
 public class Operations {
     public static void diezPilotosMasActivos(){

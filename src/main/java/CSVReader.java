@@ -27,12 +27,14 @@ public class CSVReader {
 
     public static void CargaDeDatos() throws IOException {
 
+
+        //Establece variables y nombres de tads de almacenamiento
         Boolean primeraPasada = true;
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
         Tweet[] tweetsArray = new Tweet[500_000];
         MyLinkedList<String> tweets = new MyLinkedListImpl<>();
-        MyHashImpl<LocalDateTime, User> user = new MyHashImpl<>(100_000);
+        MyHashImpl<LocalDateTime, User> users = new MyHashImpl<>(100_000);
         MyLinkedList<String> userNames = new MyLinkedListImpl<>();
         MyLinkedList<String> hashTags = new MyLinkedListImpl<>();
         MyLinkedList<String> drivers = new MyLinkedListImpl<>();
@@ -40,6 +42,7 @@ public class CSVReader {
         Integer counter = 0;
 
 
+        //Lee el CSV
         try (
                 Reader reader = Files.newBufferedReader(Paths.get(filePath));
                 CSVParser csvParser = new CSVParser(reader, CSVFormat.DEFAULT);
@@ -86,10 +89,11 @@ public class CSVReader {
                     System.out.println("---------------\n\n");*/
 
 
+                    //Almacena los datos
                     if(!userNames.contains(user_name)){
                         User nuevoUsuario = new User(user_created, user_name, user_location, user_description, user_created, user_followers, user_friends, user_favourites, user_verified);
                         userNames.add(user_name);
-                        user.put(user_created, nuevoUsuario);
+                        users.put(user_created, nuevoUsuario);
                     }
                         
                     if(!tweets.contains(tweet_text)){
@@ -99,7 +103,7 @@ public class CSVReader {
 
                     if(!hashTags.contains(hashtags)){
                         HashTag nuevoHashTag = new HashTag(hashtags);
-                        //.add(nuevoHashTag);
+                        //hashTags.add(nuevoHashTag);
                     }
 
                     counter += 1;
@@ -114,6 +118,8 @@ public class CSVReader {
                     }
                 }
             }
+
+            //Lee el txt con los drivers y los almacena
             try {
                 File myObj = new File(txtPath);
                 Scanner myReader = new Scanner(myObj);
