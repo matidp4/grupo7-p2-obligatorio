@@ -40,10 +40,12 @@ public interface MainMenu {
                 break;
             case 3:
                 System.out.println("Cantidad de HashTags distiontos para un día dado:");
+                Operations.cantidadHashTagsDistintos();
                 Menu();
                 break;
             case 4:
                 System.out.println("HashTag más usado para un día dado:");
+                Operations.hashTagMasUsado();
                 Menu();
                 break;
             case 5:
@@ -51,10 +53,8 @@ public interface MainMenu {
                 Menu();
                 break;
             case 6:
-                Scanner wordToSearch = new Scanner(System.in);
-                System.out.println("Ingrese la palabra que desea buscar");
-                String palbraABuscar = wordToSearch.nextLine();
-                System.out.println("Cantidad de tweets con la palabra buscada:");
+                System.out.println("Cantidad de tweets con una palabra:");
+                Operations.cantidadTweetsPalabraBuscada();
                 Menu();
                 break;
 

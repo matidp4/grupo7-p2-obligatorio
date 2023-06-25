@@ -3,6 +3,10 @@ import uy.edu.um.prog2.adt.linkedlist.Node;
 import uy.edu.um.prog2.adt.linkedlist.MyLinkedListImpl;
 import uy.edu.um.prog2.adt.linkedlist.MyLinkedList;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
 public class Operations {
     public static void diezPilotosMasActivos(){
         System.out.println("Diez pilotos más activos");
@@ -17,26 +21,38 @@ public class Operations {
             nodo = nodo.getNext();
             i++;
         }
-        MergeSort.MergeSort(userArray, users);
+        Sorting.MergeSort(userArray, users);
 
         for (int j = 0; j < 15; j++) {
             String nombre = userArray[userArray.length - 1 - j];
             User user = users.get(nombre).getValue();
-            System.out.println(user.getName() + " " + user.getTweets().size());
+            System.out.println(user.getName() + " " + user.getTweets().size() + "" + user.isVerified());
         }*/
 
     }
 
     public static void cantidadHashTagsDistintos(){
-        System.out.println("Cantidad de HashTags distintos");
-        // implementacion aca abajo
-        int cantidad = 0;
-        System.out.println("prueba commit");
-        //for (HashTag hashTag : hashTags.values()) {
+        try{
+            Scanner fechaIntro = new Scanner(System.in);
+            System.out.println("Introduza una fecha en el formate YYYY-MM-DD");
+            String fechaString = fechaIntro.nextLine();
+            DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            LocalDate fecha = LocalDate.parse(fechaString, dateFormat);
+        }catch (java.time.format.DateTimeParseException e){
+            System.out.println("Fecha invalida, el mes no está entre 1y 12, o el dia no está entre 1 y 31, o no se ha ingresado en el formato correcto");
+        }
     }
 
     public static void hashTagMasUsado(){
-        System.out.println("HashTag más usado");
+        try{
+            Scanner fechaIntro = new Scanner(System.in);
+            System.out.println("Introduza una fecha en el formate YYYY-MM-DD");
+            String fechaString = fechaIntro.nextLine();
+            DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            LocalDate fecha = LocalDate.parse(fechaString, dateFormat);
+        }catch (java.time.format.DateTimeParseException e){
+            System.out.println("Fecha invalida, el mes no está entre 1y 12, o el dia no está entre 1 y 31, o no se ha ingresado en el formato correcto");
+        }
     }
 
     public static void sieteCuentasMasFavoritos(){
@@ -44,6 +60,8 @@ public class Operations {
     }
 
     public static void cantidadTweetsPalabraBuscada(){
-        System.out.println("Cantidad de tweets con la palabra buscada");
+        Scanner wordToSearch = new Scanner(System.in);
+        System.out.println("Cantidad de tweets con la palabra buscada:");
+        String palabraABuscar = wordToSearch.nextLine();
     }
 }
