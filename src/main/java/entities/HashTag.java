@@ -2,6 +2,8 @@ package entities;
 
 public class HashTag {
     public HashTag(String hashtags) {
+        this.text = hashtags;
+        this.cantidad_usos = 1;
     }
 
     public long getId() {

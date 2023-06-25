@@ -5,25 +5,35 @@ import uy.edu.um.prog2.adt.linkedlist.MyLinkedList;
 import java.time.LocalDateTime;
 
 public class User {
-    private long id;
+    private LocalDateTime id;
     private String name;
     private String location;
     private String description;
     private LocalDateTime user_created;
-    private int user_followers;
-    private int user_friends;
-    private int user_favourites;
+    private float user_followers;
+    private float user_friends;
+    private float user_favourites;
     private Boolean user_verified;
     private int cant_tweets;
 
     public User(LocalDateTime userId, String userName, String userLocation, String userDescription, LocalDateTime userCreated, Float userFollowers, Float userFriends, Float userFavourites, Boolean userVerified) {
+        this.id = userId;
+        this.name = userName;
+        this.location = userLocation;
+        this.description = userDescription;
+        this.user_created = userCreated;
+        this.user_followers = userFollowers;
+        this.user_friends = userFriends;
+        this.user_favourites = userFavourites;
+        this.user_verified = userVerified;
+        this.cant_tweets = 0;
     }
 
-    public long getId() {
+    public LocalDateTime getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(LocalDateTime id) {
         this.id = id;
     }
 
@@ -51,15 +61,13 @@ public class User {
         this.description = description;
     }
 
-    public static LocalDateTime getUser_created() {
-        return user_created;
-    }
+
 
     public void setUser_created(LocalDateTime user_created) {
         this.user_created = user_created;
     }
 
-    public int getUser_followers() {
+    public float getUser_followers() {
         return user_followers;
     }
 
@@ -67,7 +75,7 @@ public class User {
         this.user_followers = user_followers;
     }
 
-    public int getUser_friends() {
+    public float getUser_friends() {
         return user_friends;
     }
 
@@ -75,7 +83,7 @@ public class User {
         this.user_friends = user_friends;
     }
 
-    public int getUser_favourites() {
+    public float getUser_favourites() {
         return user_favourites;
     }
 

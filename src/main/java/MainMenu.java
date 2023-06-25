@@ -53,7 +53,6 @@ public interface MainMenu {
                 Menu();
                 break;
             case 6:
-                System.out.println("Cantidad de tweets con una palabra:");
                 Operations.cantidadTweetsPalabraBuscada();
                 Menu();
                 break;

@@ -56,7 +56,7 @@ public class Sorting {
 
     }
 
-    public static <T extends Comparable<T>> T[] heapSort(T[] elements, int orderedElements){
+    public static <T extends Comparable<T>> T[] heapSort(T[] elements){
         return heapSort(elements, elements.length);
     }
     private static int getHeapFatherPosition(int childPosition){

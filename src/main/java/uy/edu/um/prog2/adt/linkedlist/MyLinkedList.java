@@ -15,5 +15,4 @@ public interface MyLinkedList<E> {
     int size();
     void clear();
 
-    Node<E> getHead();
 }

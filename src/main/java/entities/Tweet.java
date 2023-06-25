@@ -3,7 +3,12 @@ package entities;
 import java.time.LocalDateTime;
 
 public class Tweet {
-    public Tweet(LocalDateTime tweetDate, String tweetText, String hashtags, String tweetSource, Boolean isRetweet) {
+    public Tweet(int idTweet, String tweetText, String hashtags, String tweetSource, Boolean isRetweet) {
+        this.id = idTweet;
+        this.content = tweetText;
+        this.source = tweetSource;
+        this.isRetweet = isRetweet;
+        this.date = LocalDateTime.now();
     }
 
     public long getId() {

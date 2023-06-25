@@ -1,9 +1,6 @@
 import entities.User;
 import uy.edu.um.prog2.adt.linkedlist.Node;
-import uy.edu.um.prog2.adt.linkedlist.MyLinkedListImpl;
-import uy.edu.um.prog2.adt.linkedlist.MyLinkedList;
 
-import java.security.Key;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -14,8 +11,8 @@ public class Operations {
         System.out.println("Diez pilotos más activos");
     }
 
-    /*public static void quinceUsuariosMasActivos(){
-        LocalDateTime Key = User.getUser_created();
+    public static void quinceUsuariosMasActivos(){
+        /*LocalDateTime Key = User.getUser_created();
         String[] userArray = new String[CSVReader.users.size()];
         Node<String> nodo = CSVReader.userNames.getHead();
         int i = 0;
@@ -30,9 +27,9 @@ public class Operations {
             String nombre = userArray[userArray.length - 1 - j];
             User user = CSVReader.users.get(Key);
             System.out.println(user.getName() + " " + user.getTweets().size() + "" + user.getUser_verified());
-        }
+        }*/
 
-    }*/
+    }
 
     public static void cantidadHashTagsDistintos(){
         try{
@@ -64,7 +61,18 @@ public class Operations {
 
     public static void cantidadTweetsPalabraBuscada(){
         Scanner wordToSearch = new Scanner(System.in);
-        System.out.println("Cantidad de tweets con la palabra buscada:");
+        System.out.println("Ingrese la palabra a buscar:");
         String palabraABuscar = wordToSearch.nextLine();
+
+        int CantidadTweets = 0;
+
+
+        for (int i = 0; i < CSVReader.tweets.size(); i++){
+            if (CSVReader.tweets.get(i).getContent().contains(palabraABuscar)){
+                CantidadTweets++;
+            }
+        }
+
+        System.out.println("Cantidad de tweets con la palabra buscada: " + CantidadTweets);
     }
 }
