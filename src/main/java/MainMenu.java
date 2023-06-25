@@ -14,7 +14,7 @@ public interface MainMenu {
         System.out.println("0. Cargar datos del CSV");
         System.out.println("1. Los 10 pilotos activos más mencionados en los tweets en un mes");
         System.out.println("2. Los 15 usuarios más activos en un mes");
-        System.out.println("3. Cantidad de HashTags distiontos para un día dado");
+        System.out.println("3. Cantidad de HashTags distintos para un día dado");
         System.out.println("4. HashTag más usado para un día dado");
         System.out.println("5. 7 cuentas con más favoritos");
         System.out.println("6. Cantidad de tweets con una palabra");
@@ -39,7 +39,7 @@ public interface MainMenu {
                 Menu();
                 break;
             case 3:
-                System.out.println("Cantidad de HashTags distiontos para un día dado:");
+                System.out.println("Cantidad de HashTags distintos para un día dado:");
                 Operations.cantidadHashTagsDistintos();
                 Menu();
                 break;

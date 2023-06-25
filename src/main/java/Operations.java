@@ -34,7 +34,7 @@ public class Operations {
     public static void cantidadHashTagsDistintos(){
         try{
             Scanner fechaIntro = new Scanner(System.in);
-            System.out.println("Introduza una fecha en el formate YYYY-MM-DD");
+            System.out.println("Introduza una fecha en el formato YYYY-MM-DD");
             String fechaString = fechaIntro.nextLine();
             DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             LocalDate fecha = LocalDate.parse(fechaString, dateFormat);
@@ -46,7 +46,7 @@ public class Operations {
     public static void hashTagMasUsado(){
         try{
             Scanner fechaIntro = new Scanner(System.in);
-            System.out.println("Introduza una fecha en el formate YYYY-MM-DD");
+            System.out.println("Introduza una fecha en el formato YYYY-MM-DD");
             String fechaString = fechaIntro.nextLine();
             DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             LocalDate fecha = LocalDate.parse(fechaString, dateFormat);
