@@ -1,5 +1,6 @@
 package uy.edu.um.prog2.adt.hash;
 
+import entities.Driver;
 import uy.edu.um.prog2.adt.linkedlist.MyLinkedList;
 
 public interface MyHash<K, V> {
@@ -15,5 +16,6 @@ public interface MyHash<K, V> {
     MyLinkedList<String> values();
 
     boolean contains(K i);
+
 
 }

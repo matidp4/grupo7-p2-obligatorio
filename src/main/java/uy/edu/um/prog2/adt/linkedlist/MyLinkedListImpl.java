@@ -195,6 +195,10 @@ public class MyLinkedListImpl<E> implements MyLinkedList<E>, MyQueue<E>, MyStack
     public void clear() {
     }
 
+    @Override
+    public void set(E indice, E usos) {
+    }
+
     // para queue
     private void addToBeginning(E value) {
         if (value != null) {

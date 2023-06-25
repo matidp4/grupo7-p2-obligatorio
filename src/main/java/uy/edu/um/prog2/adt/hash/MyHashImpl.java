@@ -9,6 +9,7 @@ public class MyHashImpl<K, V> implements MyHash<K, V> {
     private Entry<K, V>[] table;
     private int size;
 
+    @SuppressWarnings("unchecked")
     public MyHashImpl(int i) {
         this.table = new Entry[INITIAL_CAPACITY];
         this.size = 0;

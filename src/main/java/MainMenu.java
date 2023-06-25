@@ -25,8 +25,12 @@ public interface MainMenu {
 
         switch (opcion){
             case 0:
+                long startTime0 = System.currentTimeMillis();
                 System.out.println("Cargar datos del CSV");
                 CSVReader.CargaDeDatos();
+                long endTime0 = System.currentTimeMillis();
+                long duration0 = (endTime0 - startTime0);
+                System.out.println("Demora carga" + "" + duration0 + "ms");
                 Menu();
                 break;
             case 1:
@@ -40,7 +44,11 @@ public interface MainMenu {
                 break;
             case 3:
                 System.out.println("Cantidad de HashTags distintos para un día dado:");
+                long startTime3 = System.currentTimeMillis();
                 Operations.cantidadHashTagsDistintos();
+                long endTime3 = System.currentTimeMillis();
+                long duration3 = (endTime3 - startTime3);
+                System.out.println("Demora carga" + "" + Operations.duration3 + "ms");
                 Menu();
                 break;
             case 4:
@@ -54,7 +62,11 @@ public interface MainMenu {
                 Menu();
                 break;
             case 6:
+                long startTime6 = System.currentTimeMillis();
                 Operations.cantidadTweetsPalabraBuscada();
+                long endTime6 = System.currentTimeMillis();
+                long duration6 = (endTime6 - startTime6);
+                System.out.println("Demora carga" + "" + duration6 + "ms");
                 Menu();
                 break;
 

@@ -16,4 +16,5 @@ public interface MyLinkedList<E> {
     void clear();
 
 
+    void set(E indice, E usos);
 }

@@ -1,3 +1,4 @@
+import entities.Driver;
 import entities.HashTag;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -17,6 +18,7 @@ import java.util.Scanner;
 import entities.Tweet;
 import entities.User;
 
+import uy.edu.um.prog2.adt.hash.MyHash;
 import uy.edu.um.prog2.adt.hash.MyHashImpl;
 import uy.edu.um.prog2.adt.linkedlist.MyLinkedList;
 import uy.edu.um.prog2.adt.linkedlist.MyLinkedListImpl;
@@ -34,9 +36,10 @@ public class CSVReader {
     static MyHashImpl<LocalDateTime, User> users = new MyHashImpl<>(100_000);
     static MyHashImpl<Integer, Tweet> tweets = new MyHashImpl<Integer, Tweet>(500_000);
     static MyLinkedList<String> hashTags = new MyLinkedListImpl<>();
-    static MyLinkedList<String> drivers = new MyLinkedListImpl<>();
+    static MyHash<Integer, Driver> pilotosActivos = new MyHashImpl<>(20);
 
     static Integer counter = 0;
+    static Integer contadorDePilotos = 0;
 
     public static void CargaDeDatos() throws IOException {
 
@@ -127,9 +130,11 @@ public class CSVReader {
                     String driver = myReader.nextLine();
                     //System.out.println(driver);
 
-                    if(!drivers.contains(driver)){
-                        drivers.add(driver);
-                    }
+
+                    Driver nuevoDriver = new Driver(contadorDePilotos, driver, 0);
+                    pilotosActivos.put(contadorDePilotos, nuevoDriver);
+                    contadorDePilotos += 1;
+
                 }
                 myReader.close();
             } catch (FileNotFoundException e) {

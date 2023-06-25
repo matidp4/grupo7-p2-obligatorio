@@ -13,4 +13,9 @@
       <module name="grupo7-p2-obligatorio" target="17" />
     </bytecodeTargetLevel>
   </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="grupo7-p2-obligatorio" options="--add-exports java.base/java=ALL-UNNAMED" />
+    </option>
+  </component>
 </project>

@@ -1,6 +1,18 @@
 package entities;
 
 public class Driver {
+
+
+    private long id;
+    private String driverName;
+    private int mentions;
+
+    public Driver(Integer contadorDePilotos, String driver, Integer mentions){
+        this.id = contadorDePilotos;
+        this.driverName = driver;
+        this.mentions = mentions;
+    }
+
     public long getId() {
         return id;
     }
@@ -25,9 +37,6 @@ public class Driver {
         this.mentions = mentions;
     }
     // atributos driver ok
-    private long id;
-    private String driverName;
-    private int mentions;
 
 }
 
