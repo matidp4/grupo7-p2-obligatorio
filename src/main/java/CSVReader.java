@@ -33,7 +33,7 @@ public class CSVReader {
     static MyLinkedList<String> tweetsList = new MyLinkedListImpl<>();
     static MyHashImpl<LocalDateTime, User> users = new MyHashImpl<>(100_000);
     static MyHashImpl<Integer, Tweet> tweets = new MyHashImpl<Integer, Tweet>(500_000);
-    static MyLinkedList<String> userNames = new MyLinkedListImpl<>();
+    static MyLinkedList<String> userNamesAppereance = new MyLinkedListImpl<>();
     static MyLinkedList<String> hashTags = new MyLinkedListImpl<>();
     static MyLinkedList<String> drivers = new MyLinkedListImpl<>();
 
@@ -91,14 +91,15 @@ public class CSVReader {
 
 
                     //Almacena los datos
-                    if(!userNames.contains(user_name)){
+                    if(!users.contains(user_created)){
                         User nuevoUsuario = new User(user_created, user_name, user_location, user_description, user_created, user_followers, user_friends, user_favourites, user_verified);
-                        userNames.add(user_name);
                         users.put(user_created, nuevoUsuario);
                     }
 
+                        userNamesAppereance.add(user_name);
 
-                        Tweet nuevoTweet = new Tweet(counter, tweet_text, hashtags, tweet_source, isRetweet);
+
+                        Tweet nuevoTweet = new Tweet(counter, tweet_text, hashtags, tweet_source, isRetweet,tweet_date);
                         tweets.put(counter, nuevoTweet);
                         tweetsList.add(tweet_text);
 

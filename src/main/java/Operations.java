@@ -1,4 +1,6 @@
 import entities.User;
+import uy.edu.um.prog2.adt.linkedlist.MyLinkedList;
+import uy.edu.um.prog2.adt.linkedlist.MyLinkedListImpl;
 import uy.edu.um.prog2.adt.linkedlist.Node;
 
 import java.time.LocalDate;
@@ -12,32 +14,47 @@ public class Operations {
     }
 
     public static void quinceUsuariosMasActivos(){
-        /*LocalDateTime Key = User.getUser_created();
-        String[] userArray = new String[CSVReader.users.size()];
-        Node<String> nodo = CSVReader.userNames.getHead();
-        int i = 0;
-        while (nodo != null) {
-            userArray[i] = nodo.getElement();
-            nodo = nodo.getNext();
-            i++;
-        }
-        Sorting.heapSort(userArray, 15);
+        System.out.println("Quince usuarios más activos");
+        /*int Actividad = 0;
+        for (User.name : CSVReader.userNamesAppereance) {
 
-        for (int j = 0; j < 15; j++) {
-            String nombre = userArray[userArray.length - 1 - j];
-            User user = CSVReader.users.get(Key);
-            System.out.println(user.getName() + " " + user.getTweets().size() + "" + user.getUser_verified());
+            Actividad ++;
+
         }*/
 
     }
 
     public static void cantidadHashTagsDistintos(){
+
+        MyLinkedList<String> hashTagsDistintos = new MyLinkedListImpl<>();
+        int contadorHashtagsDistintos = 0;
         try{
             Scanner fechaIntro = new Scanner(System.in);
             System.out.println("Introduza una fecha en el formato YYYY-MM-DD");
             String fechaString = fechaIntro.nextLine();
             DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             LocalDate fecha = LocalDate.parse(fechaString, dateFormat);
+
+            for (int i = 0; i < CSVReader.tweets.size(); i++){
+                String fechaString2 = String.valueOf(CSVReader.tweets.get(i).getDate());
+                String fechaString3 = String.valueOf(fecha);
+                if (fechaString2.contains(fechaString3)){
+                    String[] hashTagsVector = CSVReader.tweets.get(i).getHashtags();      //Arreglar, no está imprimiendo
+                    for (int j = 0; j < hashTagsVector.length; j++){
+                        String stringSinCosas = hashTagsVector[j].replace("[", "");
+                        stringSinCosas = stringSinCosas.replace("]","");
+                        stringSinCosas = stringSinCosas.replace("'","");
+                        stringSinCosas = stringSinCosas.replace(",","");
+                        if (!hashTagsDistintos.contains(stringSinCosas)){
+                            hashTagsDistintos.add(stringSinCosas);
+                            contadorHashtagsDistintos ++;
+                        }
+                    }
+                }
+            }
+            System.out.println("La cantidad de hashtags distintos en la fecha " + fecha + " es de " + contadorHashtagsDistintos + " hashtags");
+
+
         }catch (java.time.format.DateTimeParseException e){
             System.out.println("Fecha invalida, el mes no está entre 1y 12, o el dia no está entre 1 y 31, o no se ha ingresado en el formato correcto");
         }
@@ -50,6 +67,7 @@ public class Operations {
             String fechaString = fechaIntro.nextLine();
             DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             LocalDate fecha = LocalDate.parse(fechaString, dateFormat);
+
         }catch (java.time.format.DateTimeParseException e){
             System.out.println("Fecha invalida, el mes no está entre 1y 12, o el dia no está entre 1 y 31, o no se ha ingresado en el formato correcto");
         }
@@ -57,6 +75,7 @@ public class Operations {
 
     public static void sieteCuentasMasFavoritos(){
         System.out.println("Siete cuentas con más favoritos");
+
     }
 
     public static void cantidadTweetsPalabraBuscada(){
