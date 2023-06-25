@@ -1,5 +1,7 @@
 package entities;
 
+import uy.edu.um.prog2.adt.linkedlist.MyLinkedList;
+
 import java.time.LocalDateTime;
 
 public class User {
@@ -49,7 +51,7 @@ public class User {
         this.description = description;
     }
 
-    public LocalDateTime getUser_created() {
+    public static LocalDateTime getUser_created() {
         return user_created;
     }
 
@@ -95,5 +97,9 @@ public class User {
 
     public void setCant_tweets(int cant_tweets) {
         this.cant_tweets = cant_tweets;
+    }
+
+    public MyLinkedList<Object> getTweets() {
+        return null;
     }
 }

@@ -3,7 +3,9 @@ import uy.edu.um.prog2.adt.linkedlist.Node;
 import uy.edu.um.prog2.adt.linkedlist.MyLinkedListImpl;
 import uy.edu.um.prog2.adt.linkedlist.MyLinkedList;
 
+import java.security.Key;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
@@ -12,24 +14,25 @@ public class Operations {
         System.out.println("Diez pilotos más activos");
     }
 
-    public static void quinceUsuariosMasActivos(){
-        /*String[] userArray = new String[userNames.size];
-        Node<String> nodo = userNames.getHead();
+    /*public static void quinceUsuariosMasActivos(){
+        LocalDateTime Key = User.getUser_created();
+        String[] userArray = new String[CSVReader.users.size()];
+        Node<String> nodo = CSVReader.userNames.getHead();
         int i = 0;
         while (nodo != null) {
             userArray[i] = nodo.getElement();
             nodo = nodo.getNext();
             i++;
         }
-        Sorting.MergeSort(userArray, users);
+        Sorting.heapSort(userArray, 15);
 
         for (int j = 0; j < 15; j++) {
             String nombre = userArray[userArray.length - 1 - j];
-            User user = users.get(nombre).getValue();
-            System.out.println(user.getName() + " " + user.getTweets().size() + "" + user.isVerified());
-        }*/
+            User user = CSVReader.users.get(Key);
+            System.out.println(user.getName() + " " + user.getTweets().size() + "" + user.getUser_verified());
+        }
 
-    }
+    }*/
 
     public static void cantidadHashTagsDistintos(){
         try{

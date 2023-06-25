@@ -25,21 +25,22 @@ public class CSVReader {
     private static final String filePath = "C:\\Users\\matid\\Downloads\\f1_dataset_test.csv";
     private static final String txtPath = "C:\\Users\\matid\\Downloads\\drivers.txt";
 
+    //Establece variables y nombres de tads de almacenamiento
+    static Boolean primeraPasada = true;
+    static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+    Tweet[] tweetsArray = new Tweet[500_000];
+    static MyLinkedList<String> tweetsList = new MyLinkedListImpl<>();
+    static MyHashImpl<LocalDateTime, User> users = new MyHashImpl<>(100_000);
+    static MyHashImpl<LocalDateTime, Tweet> tweets = new MyHashImpl<>(500_000);
+    static MyLinkedList<String> userNames = new MyLinkedListImpl<>();
+    static MyLinkedList<String> hashTags = new MyLinkedListImpl<>();
+    static MyLinkedList<String> drivers = new MyLinkedListImpl<>();
+
+    static Integer counter = 0;
+
     public static void CargaDeDatos() throws IOException {
 
-
-        //Establece variables y nombres de tads de almacenamiento
-        Boolean primeraPasada = true;
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-
-        Tweet[] tweetsArray = new Tweet[500_000];
-        MyLinkedList<String> tweets = new MyLinkedListImpl<>();
-        MyHashImpl<LocalDateTime, User> users = new MyHashImpl<>(100_000);
-        MyLinkedList<String> userNames = new MyLinkedListImpl<>();
-        MyLinkedList<String> hashTags = new MyLinkedListImpl<>();
-        MyLinkedList<String> drivers = new MyLinkedListImpl<>();
-
-        Integer counter = 0;
 
 
         //Lee el CSV
@@ -95,15 +96,14 @@ public class CSVReader {
                         userNames.add(user_name);
                         users.put(user_created, nuevoUsuario);
                     }
-                        
-                    if(!tweets.contains(tweet_text)){
-                        Tweet nuevoTweet = new Tweet(tweet_date, tweet_text, hashtags, tweet_source, isRetweet);
-                        //tweets.add(nuevoTweet);
-                        }
+
+                    Tweet nuevoTweet = new Tweet(tweet_date, tweet_text, hashtags, tweet_source, isRetweet);
+                    tweets.put(tweet_date, nuevoTweet);
+                    tweetsList.add(tweet_text);
 
                     if(!hashTags.contains(hashtags)){
                         HashTag nuevoHashTag = new HashTag(hashtags);
-                        //hashTags.add(nuevoHashTag);
+                        hashTags.add(hashtags);
                     }
 
                     counter += 1;
