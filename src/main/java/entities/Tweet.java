@@ -60,12 +60,13 @@ public class Tweet {
         this.driver = driver;
     }
 
+    // atributos tweet ok
     private long id;
+    private String driver;
     private String content;
-    private String source;
     private Boolean isRetweet;
     private LocalDateTime date;
-    private String driver;
+    private String source;
 
     public String[] getHashtags() {
         return hashtags;
