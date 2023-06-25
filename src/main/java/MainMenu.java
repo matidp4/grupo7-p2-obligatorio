@@ -50,6 +50,7 @@ public interface MainMenu {
                 break;
             case 5:
                 System.out.println("7 cuentas con más favoritos:");
+                Operations.sieteCuentasMasFavoritos();
                 Menu();
                 break;
             case 6:
