@@ -30,7 +30,9 @@ public class HashTag {
         this.cantidad_usos = cantidad_usos;
     }
 
-    private long id;
+    // atributos hashtag ok
     private String text;
     private int cantidad_usos;
+    private long id;
+
 }

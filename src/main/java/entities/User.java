@@ -5,6 +5,7 @@ import uy.edu.um.prog2.adt.linkedlist.MyLinkedList;
 import java.time.LocalDateTime;
 
 public class User {
+    // atributos user ok -UML
     private LocalDateTime id;
     private String name;
     private String location;

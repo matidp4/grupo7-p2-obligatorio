@@ -24,7 +24,7 @@ public class Driver {
     public void setMentions(int mentions) {
         this.mentions = mentions;
     }
-
+    // atributos driver ok
     private long id;
     private String driverName;
     private int mentions;
