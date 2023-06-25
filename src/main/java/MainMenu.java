@@ -30,7 +30,7 @@ public interface MainMenu {
                 Menu();
                 break;
             case 1:
-                System.out.println("Los 10 pilotos activos más mencionados en los tweets en un mes son:");
+                Operations.diezPilotosMasActivos();
                 Menu();
                 break;
             case 2:

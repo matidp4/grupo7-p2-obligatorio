@@ -1,6 +1,6 @@
 package uy.edu.um.prog2.adt.heap;
 
-interface MyHeap<E extends Comparable<E>> {
+public interface MyHeap<E extends Comparable<E>> {
     boolean isEmpty();
     int size();
     void insert(E element);
@@ -8,4 +8,5 @@ interface MyHeap<E extends Comparable<E>> {
     E extract();
     void clear();
 
+    boolean contains(E parseInt);
 }

@@ -15,4 +15,5 @@ public interface MyLinkedList<E> {
     int size();
     void clear();
 
+
 }

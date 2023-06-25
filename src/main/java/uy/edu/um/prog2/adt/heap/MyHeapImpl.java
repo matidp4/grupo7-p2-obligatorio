@@ -23,6 +23,10 @@ public class MyHeapImpl<E extends Comparable<E>> implements MyHeap<E> {
         this.size = 0;
     }
 
+    public MyHeapImpl() {
+
+    }
+
     @Override
     public void insert(E element) {
         if (size == heap.length) {
@@ -66,6 +70,11 @@ public class MyHeapImpl<E extends Comparable<E>> implements MyHeap<E> {
     @Override
     public void clear() {
 
+    }
+
+    @Override
+    public boolean contains(E parseInt) {
+        return false;
     }
 
 
