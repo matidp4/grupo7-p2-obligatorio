@@ -21,6 +21,7 @@ public interface MainMenu {
         System.out.println("7. Salir");
         System.out.println("Seleccione una opción mediante un número: ");
 
+
         Integer opcion = optionSelect.nextInt();
 
         switch (opcion){
@@ -63,6 +64,7 @@ public interface MainMenu {
                 break;
 
             default:
+                // si no corresponde a numero del menu se vuelve a llamar al menu
                 System.out.println("Opción inválida");
                 Menu();
                 break;

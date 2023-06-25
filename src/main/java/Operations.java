@@ -10,11 +10,12 @@ import java.util.Scanner;
 
 public class Operations {
     public static void diezPilotosMasActivos(){
-        System.out.println("Diez pilotos más activos");
+        // ya esta escrito el " los diez pilotos mas activos en el menu"
+        // aca hay que hacer el metodo
     }
 
     public static void quinceUsuariosMasActivos(){
-        System.out.println("Quince usuarios más activos");
+
         /*int Actividad = 0;
         for (User.name : CSVReader.userNamesAppereance) {
 
@@ -74,7 +75,7 @@ public class Operations {
     }
 
     public static void sieteCuentasMasFavoritos(){
-        System.out.println("Siete cuentas con más favoritos");
+
 
     }
 
