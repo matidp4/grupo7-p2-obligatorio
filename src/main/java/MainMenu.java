@@ -50,6 +50,7 @@ public interface MainMenu {
                 break;
             case 5:
                 System.out.println("7 cuentas con más favoritos:");
+                Operations.sieteCuentasMasFavoritos();
                 Menu();
                 break;
             case 6:
@@ -62,6 +63,7 @@ public interface MainMenu {
                 break;
 
             default:
+                //Si no es una de las opciones listadas, informamos y volvemos a llamar al menú
                 System.out.println("Opción inválida");
                 Menu();
                 break;
