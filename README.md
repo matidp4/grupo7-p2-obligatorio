@@ -4,7 +4,9 @@ Obligatorio de Matías Di Palma y Antonella Parentini
 
 ## Ejecución
 
-![UsoMemoriaInicio](grupo7-p2-obligatorio\imagenes\UsoMemoria_AlIniciar.jpg)
+![UsoMemoriaInicio](imagenes\UsoMemoria_AlIniciar.jpg)
+
+Uso de memoria al inicar el programa
 
 ### Carga de datos
 La clase CSVReader se encarga de la carga de datos y mediante el uso de la libreria Apache Commons CSV se parsea el archivo.
@@ -15,7 +17,9 @@ También se lee el txt con los drivers y se les almacena en un Hash con un numer
 
 Demora de la función: alrededor de 1500ms con el dataset_test.csv
 
-![UsoMemoriaCarga](grupo7-p2-obligatorio\imagenes\UsoMemoria_TrasCargarDatos.jpg)
+![UsoMemoriaCarga](imagenes/UsoMemoria_TrasCargarDatos.jpg)
+
+Uso de memoria al cargar los datos
 
 ### Consulta 1 10 pilotos con más menciones
 La consulta uno pide la fecha y verifica que sea correcta. Luego se recorre los pilots y se separan en nombre y apellido.
@@ -24,14 +28,18 @@ Al final los ordena con un Heap y imprime los 10 con más menciones.
 
 Demora de la función: alrededor de 2000ms con el dataset_test.csv
 
-![UsoMemoriaCons1](grupo7-p2-obligatorio\imagenes\UsoMemoria_Consulta1.jpg)
+![UsoMemoriaCons1](imagenes\UsoMemoria_Consulta1.jpg)
+
+Uso de memoria al hacer la consulta 1
 
 ### Consulta 2 15 usuarios con más tweets
 Se obtiene la cantidad de tweets de los usuarios y se las ingresa a un Heap. Luego se imprimen los valores de mayor a menor del Heap.
 
 Demora de la función: alrededor de 153ms con el dataset_test.csv
 
-![UsoMemoriaCons2](grupo7-p2-obligatorio\imagenes\UsoMemoria_Consulta2.jpg)
+![UsoMemoriaCons2](imagenes\UsoMemoria_Consulta2.jpg)
+
+Uso de memoria al hacer la consulta 2
 
 ### Consulta 3 Cantidad de Hash Tags distintos para un día dado
 Se crea una LinkedList de Hash Tags distintos.
@@ -41,7 +49,9 @@ Finalmente se imprime el tamaño de la LinkedList.
 
 Demora de la función: Alrededor de 3000ms con el dataset_test.csv
 
-![UsoMemoriaCons3](grupo7-p2-obligatorio\imagenes\UsoMemoria_Consulta3.jpg)
+![UsoMemoriaCons3](imagenes\UsoMemoria_Consulta3.jpg)
+
+Uso de memoria al hacer la consulta 3
 
 ### Consulta 4 HashTag más usado en un día dado
 Incompleta
@@ -55,4 +65,6 @@ Si la contiene se suma a un valor de Cantidad de tweets que se imprime al final.
 
 Demora de la consulta: Alrededor de 1500ms con el dataset_test.csv
 
-![UsoMemoriaCons6](grupo7-p2-obligatorio\imagenes\UsoMemoria_Consulta6.jpg)
+![UsoMemoriaCons6](imagenes\UsoMemoria_Consulta6.jpg)
+
+Uso de memoria al hacer la consulta 6
