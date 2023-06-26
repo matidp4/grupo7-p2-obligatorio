@@ -40,7 +40,7 @@ Demora de la función: alrededor de 2000ms con el dataset_test.csv
 Uso de memoria al hacer la consulta 1
 
 ### Consulta 2 15 usuarios con más tweets
-Se obtiene la cantidad de tweets de los usuarios y se las ingresa a un Heap. Luego se imprimen los valores de mayor a menor del Heap.
+Se obtiene la cantidad de tweets de los usuarios y se las ingresa a un Heap. Luego se ordenan en un Array y se imprimen los valores.
 
 Demora de la función: alrededor de 153ms con el dataset_test.csv
 
