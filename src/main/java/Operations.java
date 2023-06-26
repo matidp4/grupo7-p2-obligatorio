@@ -85,25 +85,23 @@ public class Operations {
         MyHeap<Integer> heapUsuarios = new MyHeapImpl<>(500000);
         long startTime2 = System.currentTimeMillis();
         try{
-        for (int i = 0; i < CSVReader.usersKeyNumber.size(); i++){
+
+
+            for (int i = 0; i < CSVReader.usersKeyNumber.size(); i++){
 
             heapUsuarios.insert(CSVReader.usersKeyNumber.get(i).getCant_tweets());
         }
-        for(int i = 0; i < heapUsuarios.size() - 1; i++){
-            if(i < heapUsuarios.size() -15 ){
-
-                for(int i1 = 0; i1 < CSVReader.usersKeyNumber.size() - 1; i1++){
-                    if(CSVReader.usersKeyNumber.get(i1).getCant_tweets() == heapUsuarios.get()){
-                        System.out.println(CSVReader.usersKeyNumber.get(i1).getName()+ " " + heapUsuarios.get());
-                        heapUsuarios.delete();
-                    }
-                }
-            }
-            else{
+            Integer[] arrayUsuarios = new Integer[heapUsuarios.size()];
+            for(int i1 = 0; i1 < CSVReader.usersKeyNumber.size(); i1++){
+                int cosa = heapUsuarios.get();
                 heapUsuarios.delete();
+                arrayUsuarios[i1] = cosa;
+            }
+            for(int i2 = 0; i2 < 15; i2++){
+
+                System.out.println(CSVReader.usersKeyNumber.get(CSVReader.usersKeyNumber.size() -i2 -1).getName()+ " " + arrayUsuarios[arrayUsuarios.length - i2 -1] +" " + CSVReader.usersKeyNumber.get(CSVReader.usersKeyNumber.size() -i2 -1).getUser_verified());
             }
 
-        }
         }
         catch (java.lang.NullPointerException e){
 
@@ -111,7 +109,7 @@ public class Operations {
         long endTime2 = System.currentTimeMillis();
         long duration2 = (endTime2 - startTime2);
         //System.out.println(duration2);
-    }  //Imprime más de 15
+    } 
 
 
 
