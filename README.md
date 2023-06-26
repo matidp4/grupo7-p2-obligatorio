@@ -6,6 +6,11 @@ Obligatorio de Matías Di Palma y Antonella Parentini
 
 ## Ejecución
 
+![UML](imagenes\DiagramaUML.jpg)
+
+Diagrama UML del programa
+
+
 ![UsoMemoriaInicio](imagenes\UsoMemoria_AlIniciar.jpg)
 
 Uso de memoria al inicar el programa

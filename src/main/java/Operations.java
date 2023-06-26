@@ -156,7 +156,7 @@ public class Operations {
     }  //Completa
 
     public static void hashTagMasUsado(){
-        try{
+        /*try{
             Scanner fechaIntro = new Scanner(System.in);
             System.out.println("Introduza una fecha en el formato YYYY-MM-DD");
             String fechaString = fechaIntro.nextLine();
@@ -207,8 +207,8 @@ public class Operations {
 
         }catch (java.time.format.DateTimeParseException e){
             System.out.println("Fecha invalida, el mes no está entre 1y 12, o el dia no está entre 1 y 31, o no se ha ingresado en el formato correcto");
-        }
-    }   //Sin terminar
+        }*/
+    }   //Incompleta
 
     public static void sieteCuentasMasFavoritos(){
         System.out.println("Siete cuentas con más favoritos");
@@ -240,7 +240,7 @@ public class Operations {
 
 
 
-    }       //Sin terminar
+    }       //Incompleta
 
     public static void cantidadTweetsPalabraBuscada(){
         Scanner wordToSearch = new Scanner(System.in);
