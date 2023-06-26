@@ -28,7 +28,7 @@ public class Operations {
         System.out.println("Introduza un mes en el formato MM");
         String mesString = mesIntro.nextLine();
         Scanner anoIntro = new Scanner(System.in);
-        System.out.println("Introduza un año en el formato YY");
+        System.out.println("Introduza un año en el formato YYYY");
         String anoString = anoIntro.nextLine();
         String anoMesString = anoString + "-" + mesString;
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM");
@@ -77,15 +77,37 @@ public class Operations {
 
 
     public static void quinceUsuariosMasActivos(){
-        System.out.println("Quince usuarios más activos");
-        /*int Actividad = 0;
-        for (User.name : CSVReader.userNamesAppereance) {
 
-            Actividad ++;
+        MyHeap<Integer> heapUsuarios = new MyHeapImpl<>(500000);
 
-        }*/
+        try{
+        for (int i = 0; i < CSVReader.usersKeyNumber.size(); i++){
 
-    }
+            heapUsuarios.insert(CSVReader.usersKeyNumber.get(i).getCant_tweets());
+        }
+        for(int i = 0; i < heapUsuarios.size() - 1; i++){
+            if(i < heapUsuarios.size() -15 ){
+
+                for(int i1 = 0; i1 < CSVReader.usersKeyNumber.size() - 1; i1++){
+                    if(CSVReader.usersKeyNumber.get(i1).getCant_tweets() == heapUsuarios.get()){
+                        System.out.println(CSVReader.usersKeyNumber.get(i1).getName()+ " " + heapUsuarios.get());
+                        heapUsuarios.delete();
+                    }
+                }
+            }
+            else{
+                heapUsuarios.delete();
+            }
+
+        }
+        }
+        catch (java.lang.NullPointerException e){
+
+        }
+    }  //Imprime más de 15
+
+
+
 
     public static void cantidadHashTagsDistintos(){
 
@@ -133,9 +155,9 @@ public class Operations {
             DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             LocalDate fecha = LocalDate.parse(fechaString, dateFormat);
 
-            MyLinkedList<String> hashTags = new MyLinkedListImpl<>();
-            MyLinkedList<Integer> hashTagsUsos = new MyLinkedListImpl<>();
-            MyHeap<Integer> hashTagsDistintos = new MyHeapImpl<>(1000);
+            MyHash<Integer, String> hashHashtags = new MyHashImpl<>(500000);
+            int contadorHashtagsDistintos = 0;
+            int contadorUsos = 0;
 
 
             for (int i = 0; i < CSVReader.tweets.size(); i++){
@@ -148,9 +170,8 @@ public class Operations {
                         stringSinCosas = stringSinCosas.replace("]","");
                         stringSinCosas = stringSinCosas.replace("'","");
                         stringSinCosas = stringSinCosas.replace(",","");
-                        if (!hashTags.contains(stringSinCosas)){
-                            hashTags.add(stringSinCosas);
-                            hashTagsUsos.add(1);
+                        if (!hashHashtags.contains(stringSinCosas)){
+                            hashHashtags.put(contadorHashtagsDistintos, stringSinCosas);
                         }
                         else{
                             int indice = hashTags.indexOf(stringSinCosas);
@@ -183,6 +204,33 @@ public class Operations {
 
     public static void sieteCuentasMasFavoritos(){
         System.out.println("Siete cuentas con más favoritos");
+        MyHeap<Integer> heapCuentas = new MyHeapImpl<>(500000);
+
+        try{
+        for(int i = 0; i < CSVReader.users.size(); i++){
+            int favouritesInt = Math.round((CSVReader.usersKeyNumber.get(i).getUser_favourites()));
+            heapCuentas.insert(favouritesInt);
+
+            for(int i1 = 0; i1 < CSVReader.usersKeyNumber.size() ; i++){
+                if(i > 8){
+
+                    for(int i2 = 0; i2 < CSVReader.usersKeyNumber.size() - 1; i1++){
+                        if(CSVReader.usersKeyNumber.get(i2).getUser_favourites() == heapCuentas.get()){
+                            System.out.println(CSVReader.usersKeyNumber.get(i1).getName()+ " " + heapCuentas.get());
+                            heapCuentas.delete();
+                        }
+                    }
+                }
+                else{
+                    heapCuentas.delete();
+                }
+            }
+        }
+        }catch(RuntimeException e){
+
+        }
+
+
 
     }
 

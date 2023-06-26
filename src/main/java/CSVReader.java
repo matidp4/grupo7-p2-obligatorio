@@ -31,15 +31,17 @@ public class CSVReader {
     static Boolean primeraPasada = true;
     static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
-    Tweet[] tweetsArray = new Tweet[500_000];
+    static MyLinkedList<String> usersList = new MyLinkedListImpl<>();
     static MyLinkedList<String> tweetsList = new MyLinkedListImpl<>();
     static MyHashImpl<LocalDateTime, User> users = new MyHashImpl<>(100_000);
     static MyHashImpl<Integer, Tweet> tweets = new MyHashImpl<Integer, Tweet>(500_000);
     static MyLinkedList<String> hashTags = new MyLinkedListImpl<>();
     static MyHash<Integer, Driver> pilotosActivos = new MyHashImpl<>(20);
+    static MyHash<Integer, User> usersKeyNumber = new MyHashImpl<>(100_000);
 
     static Integer counter = 0;
     static Integer contadorDePilotos = 0;
+    static Integer contadorDeHashtags = 0;
 
     public static void CargaDeDatos() throws IOException {
 
@@ -93,9 +95,14 @@ public class CSVReader {
 
 
                     //Almacena los datos
-                    if(!users.contains(user_created)){
-                        User nuevoUsuario = new User(user_created, user_name, user_location, user_description, user_created, user_followers, user_friends, user_favourites, user_verified);
+                    if(users.get(user_created) == null){
+                        User nuevoUsuario = new User(user_created, user_name, user_location, user_description, user_created, user_followers, user_friends, user_favourites, user_verified, 1);
                         users.put(user_created, nuevoUsuario);
+                        usersKeyNumber.put(counter, nuevoUsuario);
+                    }
+                    else{
+                        users.get(user_created).setCant_tweets(users.get(user_created).getCant_tweets() + 1);
+                        usersKeyNumber.get(counter).setCant_tweets(usersKeyNumber.get(counter).getCant_tweets() + 1);
                     }
 
 
@@ -105,8 +112,9 @@ public class CSVReader {
                         tweetsList.add(tweet_text);
 
                     if(!hashTags.contains(hashtags)){
-                        HashTag nuevoHashTag = new HashTag(hashtags);
+                        HashTag nuevoHashTag = new HashTag(contadorDeHashtags,hashtags ,0);
                         hashTags.add(hashtags);
+                        contadorDeHashtags += 1;
                     }
 
                     counter += 1;
@@ -117,6 +125,9 @@ public class CSVReader {
 
                     }
                     catch(DateTimeParseException e2){
+
+                    }
+                    catch(NullPointerException e3){
 
                     }
                 }

@@ -17,7 +17,7 @@ public class User {
     private Boolean user_verified;
     private int cant_tweets;
 
-    public User(LocalDateTime userId, String userName, String userLocation, String userDescription, LocalDateTime userCreated, Float userFollowers, Float userFriends, Float userFavourites, Boolean userVerified) {
+    public User(LocalDateTime userId, String userName, String userLocation, String userDescription, LocalDateTime userCreated, Float userFollowers, Float userFriends, Float userFavourites, Boolean userVerified, int Cant_tweets) {
         this.id = userId;
         this.name = userName;
         this.location = userLocation;
@@ -27,7 +27,7 @@ public class User {
         this.user_friends = userFriends;
         this.user_favourites = userFavourites;
         this.user_verified = userVerified;
-        this.cant_tweets = 0;
+        this.cant_tweets = Cant_tweets;
     }
 
     public LocalDateTime getId() {
