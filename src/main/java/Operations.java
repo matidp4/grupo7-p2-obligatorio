@@ -20,6 +20,7 @@ public class Operations {
     static long duration3 = 0;
     public static void diezPilotosMasActivos(){
 
+        long startTime1 = System.currentTimeMillis();
         MyHeap<Integer> heapPilotos = new MyHeapImpl<>(20);
         int h = 0;
 
@@ -73,13 +74,16 @@ public class Operations {
         catch (java.lang.NullPointerException e){
 
         }
-    }
+        long endTime1 = System.currentTimeMillis();
+        long duration1 = (endTime1 - startTime1);
+        //System.out.println(duration1);
+    }   //Completa
 
 
     public static void quinceUsuariosMasActivos(){
 
         MyHeap<Integer> heapUsuarios = new MyHeapImpl<>(500000);
-
+        long startTime2 = System.currentTimeMillis();
         try{
         for (int i = 0; i < CSVReader.usersKeyNumber.size(); i++){
 
@@ -104,6 +108,9 @@ public class Operations {
         catch (java.lang.NullPointerException e){
 
         }
+        long endTime2 = System.currentTimeMillis();
+        long duration2 = (endTime2 - startTime2);
+        //System.out.println(duration2);
     }  //Imprime más de 15
 
 
@@ -141,21 +148,22 @@ public class Operations {
             System.out.println("La cantidad de hashtags distintos en la fecha " + fecha + " es de " + contadorHashtagsDistintos + " hashtags");
             long endTime3 = System.currentTimeMillis();
             long duration3 = (endTime3 - startTime3);
+            //System.out.println(duration3);
 
         }catch (java.time.format.DateTimeParseException e){
             System.out.println("Fecha invalida, el mes no está entre 1y 12, o el dia no está entre 1 y 31, o no se ha ingresado en el formato correcto");
         }
-    }
+    }  //Completa
 
     public static void hashTagMasUsado(){
-        /*try{
+        try{
             Scanner fechaIntro = new Scanner(System.in);
             System.out.println("Introduza una fecha en el formato YYYY-MM-DD");
             String fechaString = fechaIntro.nextLine();
             DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
             LocalDate fecha = LocalDate.parse(fechaString, dateFormat);
 
-            MyHash<Integer, String> hashHashtags = new MyHashImpl<>(500000);
+            MyHash<Integer, String> hashHashtags = new MyHashImpl<>(50000);
             int contadorHashtagsDistintos = 0;
             int contadorUsos = 0;
 
@@ -199,8 +207,8 @@ public class Operations {
 
         }catch (java.time.format.DateTimeParseException e){
             System.out.println("Fecha invalida, el mes no está entre 1y 12, o el dia no está entre 1 y 31, o no se ha ingresado en el formato correcto");
-        }*/
-    }
+        }
+    }   //Sin terminar
 
     public static void sieteCuentasMasFavoritos(){
         System.out.println("Siete cuentas con más favoritos");
@@ -232,13 +240,14 @@ public class Operations {
 
 
 
-    }
+    }       //Sin terminar
 
     public static void cantidadTweetsPalabraBuscada(){
         Scanner wordToSearch = new Scanner(System.in);
         System.out.println("Ingrese la palabra a buscar:");
         String palabraABuscar = wordToSearch.nextLine();
 
+        long startTime6 = System.currentTimeMillis();
         int CantidadTweets = 0;
 
 
@@ -249,5 +258,8 @@ public class Operations {
         }
 
         System.out.println("Cantidad de tweets con la palabra buscada: " + CantidadTweets);
-    }
+        long endTime6 = System.currentTimeMillis();
+        long duration6 = (endTime6 - startTime6);
+        //System.out.println(duration6);
+    }   //Completa
 }
