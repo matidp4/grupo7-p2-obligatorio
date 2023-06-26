@@ -6,12 +6,12 @@ Obligatorio de Matías Di Palma y Antonella Parentini
 
 ## Ejecución
 
-![UML](imagenes\DiagramaUML.jpg)
+![UML](imagenes/DiagramaUML.jpg)
 
 Diagrama UML del programa
 
 
-![UsoMemoriaInicio](imagenes\UsoMemoria_AlIniciar.jpg)
+![UsoMemoriaInicio](imagenes/UsoMemoria_AlIniciar.jpg)
 
 Uso de memoria al inicar el programa
 
@@ -35,7 +35,7 @@ Al final los ordena con un Heap y imprime los 10 con más menciones.
 
 Demora de la función: alrededor de 2000ms con el dataset_test.csv
 
-![UsoMemoriaCons1](imagenes\UsoMemoria_Consulta1.jpg)
+![UsoMemoriaCons1](imagenes/UsoMemoria_Consulta1.jpg)
 
 Uso de memoria al hacer la consulta 1
 
@@ -44,7 +44,7 @@ Se obtiene la cantidad de tweets de los usuarios y se las ingresa a un Heap. Lue
 
 Demora de la función: alrededor de 153ms con el dataset_test.csv
 
-![UsoMemoriaCons2](imagenes\UsoMemoria_Consulta2.jpg)
+![UsoMemoriaCons2](imagenes/soMemoria_Consulta2.jpg)
 
 Uso de memoria al hacer la consulta 2
 
@@ -56,7 +56,7 @@ Finalmente se imprime el tamaño de la LinkedList.
 
 Demora de la función: Alrededor de 3000ms con el dataset_test.csv
 
-![UsoMemoriaCons3](imagenes\UsoMemoria_Consulta3.jpg)
+![UsoMemoriaCons3](imagenes/UsoMemoria_Consulta3.jpg)
 
 Uso de memoria al hacer la consulta 3
 
@@ -72,6 +72,6 @@ Si la contiene se suma a un valor de Cantidad de tweets que se imprime al final.
 
 Demora de la consulta: Alrededor de 1500ms con el dataset_test.csv
 
-![UsoMemoriaCons6](imagenes\UsoMemoria_Consulta6.jpg)
+![UsoMemoriaCons6](imagenes/UsoMemoria_Consulta6.jpg)
 
 Uso de memoria al hacer la consulta 6
